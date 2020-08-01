@@ -284,23 +284,17 @@ def ConvertData(csv, row):
 
 
 #Replace this with the location of where you uncompressed the bulk data file.
-
-# Change the current working Directory    
-try:    
-    os.chdir("//Users/robertsteger/Downloads/Data")
-except OSError:
-    print("Can't change the Current Working Directory")
-
-directory1 = "//Users/robertsteger/Downloads/L Chain/"
-directory2 = "//Users/robertsteger/Downloads/Heavy_Chain/"
-file = "Bernat_light_chain.csv"
-#DataToCSV(directory1, "L", 10000, "Bernat_light_chain2")
+directory1 = "//Users/Location"
+directory2 = "//Users/Location2"
+file = "File.csv"
+#DataToCSV(directory1, "L", 10000, file)
 #duplicate_checker_bulk(directory2, file)
-print("n")
-parse_single_file_printer("Bernat_2019_Light_IgK_Light_IgK_A007.json.gz",1)
+print()
+JSON_file = "File.json.gz"
+parse_single_file_printer(JSON_file,1)
 
 for i in range(1,10):
-    l1,l2,l3 = ConvertData("Bernat_light_chain2.csv",i)
+    l1,l2,l3 = ConvertData(file,i)
     print(l1)
     print(l2)
     print(l3)
