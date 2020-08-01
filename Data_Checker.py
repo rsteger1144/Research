@@ -149,15 +149,16 @@ def Shorten(l):
     
     return short_l
 
-#import data and convet to array
-data_df1 = pd.read_csv("38sequence_data.txt")
+
+file_name = "File.txt"
+#import data and convert to array
+data_df1 = pd.read_csv(file_name)
 X1 = np.array(data_df1.values)
 row, col =  X1.shape
 
 #using functions
-
-#l = Heavy_Chains("1mim-HL", X1)
-l = Light_Chains("1mim-HL", X1)
+l = Heavy_Chains(file_name, X1)
+l = Light_Chains(file_name, X1)
 SASA_list = Shorten(l)# I can prob just add this into H/L_chain funcs 
 print(len(SASA_list))
 print()
