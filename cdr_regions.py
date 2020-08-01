@@ -8,6 +8,8 @@ Created on Sun Jul 26 10:17:53 2020
 import pandas as pd
 import numpy as np
 def ConvertData(csv, row):
+    """Converts needed information from CSV file of 3 cdr regions into lists
+    """
     data_df = pd.read_csv(csv)
     array = np.array(data_df.values.tolist())
     c1String = array[row][12]
@@ -27,9 +29,9 @@ def ConvertData(csv, row):
            cdrl3.append(c3String[k])
     
     return cdrl1,cdrl2,cdrl3
-
+file_name = "File.csv"
 for i in range(1,10):
-    l1,l2,l3 = ConvertData("Bernat_light_chain2.csv",i)
+    l1,l2,l3 = ConvertData(file_name,i)
     print(l1)
     print(l2)
     print(l3)
